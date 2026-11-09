@@ -220,9 +220,11 @@ a:hover{color:var(--text)}
 .icon-pill{display:inline-flex;gap:var(--s-50);padding:var(--s-50);border-radius:9999px;border:1px solid var(--line);background:rgba(255,240,225,.06);backdrop-filter:blur(8px);vertical-align:middle;transform:translateY(-6px);margin-left:var(--s-100)}
 .icon-pill span{width:32px;height:32px;display:grid;place-items:center;border-radius:9999px;background:rgba(255,240,225,.06);font-size:16px;color:var(--text)}
 .hero .sub{margin-top:var(--s-300);color:rgba(247,241,232,.82);max-width:480px}
-.who{display:inline-flex;align-items:center;gap:var(--s-100);padding:var(--s-50) var(--s-300) var(--s-50) var(--s-50);margin-bottom:var(--s-300);border-radius:9999px;border:1px solid var(--line);background:rgba(19,18,9,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.who img{width:64px;height:64px;border-radius:9999px;object-fit:cover;object-position:50% 50%;box-shadow:0 0 0 2px var(--ember)}
-.who .caption-5{color:var(--muted)}
+.who{display:inline-flex;align-items:center;gap:var(--s-200);padding:var(--s-75) var(--s-400) var(--s-75) var(--s-75);margin-bottom:var(--s-300);border-radius:9999px;border:1px solid var(--line);background:rgba(19,18,9,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.who img{width:96px;height:96px;border-radius:9999px;object-fit:cover;object-position:50% 50%;box-shadow:0 0 0 3px var(--ember),0 0 24px rgba(255,122,47,.35)}
+.who .who-name{font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.01em}
+.who .who-role{font-size:16px;line-height:24px;color:var(--muted);margin-top:var(--s-25)}
+@media (max-width:520px){.who{gap:var(--s-100);padding-right:var(--s-200)}.who img{width:72px;height:72px}.who .who-name{font-size:20px;line-height:28px}.who .who-role{font-size:14px;line-height:20px}}
 .hero-in>*:nth-child(4){animation-delay:360ms}
 .email-pill{display:flex;align-items:center;gap:var(--s-75);margin-top:var(--s-400);max-width:440px;padding:var(--s-50) var(--s-50) var(--s-50) var(--s-200);border-radius:9999px;
   background:rgba(19,18,9,.55);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
@@ -650,8 +652,8 @@ footer a:hover{color:var(--text)}
   <div class="wrap">
     <div class="hero-copy hero-in">
       <div class="who">
-        <img src="photo.jpg" alt="Portrait of Jatismar Saha" width="64" height="64">
-        <div><p class="title-3">Jatismar Saha</p><p class="caption-5">PhD researcher &middot; JST-LOTUS Fellow, NIMS</p></div>
+        <img src="photo.jpg" alt="Portrait of Jatismar Saha" width="96" height="96">
+        <div><p class="who-name">Jatismar Saha</p><p class="who-role">PhD researcher &middot; JST-LOTUS Fellow, NIMS</p></div>
       </div>
       <h1 class="heading-1">Solar cells<br>without the lead<span class="icon-pill" role="list" aria-label="My workflow: light, fabrication, characterization, simulation"><span class="ph ph-sun" role="listitem" title="Light: sunlight into current"></span><span class="ph ph-flask" role="listitem" title="Fabrication: tin perovskite films in the glovebox"></span><span class="ph ph-microscope" role="listitem" title="Characterization: FESEM, XRD, UV-Vis"></span><span class="ph ph-cpu" role="listitem" title="Simulation: device modeling in Sentaurus TCAD"></span></span></h1>
       <p class="sub body-7">I'm Jatismar Saha, a PhD researcher at IIT Guwahati and JST-LOTUS Fellow at NIMS, Japan. I make, measure and model tin-based perovskite solar cells.</p>
