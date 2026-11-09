@@ -1,6 +1,7 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -8,7 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#131209;--surface:rgba(255,240,225,.04);--line:rgba(255,240,225,.12);--text:#F7F1E8;--muted:#B4A898;--accent:#FFB27A;--accent-ink:#1A1208;--from:#F7F1E8;--to:#B4A898;--ease:cubic-bezier(0.22,1,0.36,1)}
+:root{--bg:#FBF7F1;--surface:rgba(60,30,10,.035);--line:rgba(60,30,10,.13);--text:#1C140C;--muted:#5E5246;--accent:#B04A12;--accent-ink:#1A1208;--from:#1C140C;--to:#5E5246;--ease:cubic-bezier(0.22,1,0.36,1)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#131209;--surface:rgba(255,240,225,.04);--line:rgba(255,240,225,.12);--text:#F7F1E8;--muted:#B4A898;--accent:#FFB27A;--accent-ink:#1A1208;--from:#F7F1E8;--to:#B4A898;--ease:cubic-bezier(0.22,1,0.36,1)}}
+:root[data-theme="dark"]{--bg:#131209;--surface:rgba(255,240,225,.04);--line:rgba(255,240,225,.12);--text:#F7F1E8;--muted:#B4A898;--accent:#FFB27A;--accent-ink:#1A1208;--from:#F7F1E8;--to:#B4A898;--ease:cubic-bezier(0.22,1,0.36,1)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:"Manrope",ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:24px}
 main{max-width:680px;margin:0 auto;padding:96px 16px}
@@ -16,7 +19,7 @@ h1{margin:0;font-size:48px;line-height:48px;font-weight:600;text-wrap:balance;ba
 h2{margin:32px 0 8px;font-size:20px;line-height:28px;font-weight:600}
 p{margin:16px 0 0;color:var(--muted);text-wrap:pretty}
 a{color:var(--accent)}
-.btn{display:inline-flex;margin-top:32px;padding:8px 12px;border-radius:8px;background:#F3EAD7;color:var(--accent-ink);border-radius:9999px;font-weight:600;text-decoration:none;transition:transform 500ms var(--ease)}
+.btn{display:inline-flex;margin-top:32px;padding:8px 12px;border-radius:8px;background:#E8641F;color:var(--accent-ink);border-radius:9999px;font-weight:600;text-decoration:none;transition:transform 500ms var(--ease)}
 .btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(0.98)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (max-width:600px){h1{font-size:30px;line-height:36px}}
@@ -27,6 +30,8 @@ a{color:var(--accent)}
 </head><body><main>
 <h1>Privacy</h1>
 <p>This is a personal academic website. It sets no cookies, runs no analytics, and has no forms, so it does not collect personal data from you.</p>
+<h2>Light and dark mode</h2>
+<p>If you switch between light and dark mode, that choice is saved in your own browser (local storage) so the site remembers it. It is never sent anywhere.</p>
 <h2>Hosting</h2>
 <p>The site is hosted on GitHub Pages. GitHub may log technical data such as IP addresses to keep the service secure. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener" target="_blank">GitHub privacy statement</a>.</p>
 <h2>Fonts and icons</h2>
