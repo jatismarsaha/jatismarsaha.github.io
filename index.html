@@ -29,7 +29,7 @@
 <link rel="preload" as="image" href="img/hero-cell.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   --ember:#E8641F; --ember-2:#B04A12; --ember-deep:#8C2608;
   --nav-bg:rgba(251,247,241,.82); --nav-link:#4A3F35; --nav-btn-bg:transparent;
   --tip-bg:rgba(255,255,255,.97); --grid:rgba(60,30,10,.09); --xhair:rgba(28,20,12,.35);
-  --c-pv:#D2541A; --c-tan:#7B5CC4; --c-si:#0E8A78;
+  --c-pv:#D2541A; --c-tan:#7B5CC4; --c-si:#0E8A78; --accent-serif:#B04A12; --serif:"Instrument Serif",Georgia,serif;
   color-scheme:light;
 }
 /* Dark theme: device preference (unless the visitor chose light), or an explicit choice */
@@ -83,7 +83,7 @@
   --ember:#FF7A2F; --ember-2:#FFB27A; --ember-deep:#8C2608;
   --nav-bg:rgba(19,18,9,.72); --nav-link:rgba(247,241,232,.82); --nav-btn-bg:rgba(19,18,9,.4);
   --tip-bg:rgba(19,18,9,.94); --grid:rgba(255,240,225,.08); --xhair:rgba(247,241,232,.35);
-  --c-pv:#E8641F; --c-tan:#9A7FD6; --c-si:#14A08C;
+  --c-pv:#E8641F; --c-tan:#9A7FD6; --c-si:#14A08C; --accent-serif:#FFB27A;
   color-scheme:dark;
   }
 }
@@ -93,7 +93,7 @@
   --ember:#FF7A2F; --ember-2:#FFB27A; --ember-deep:#8C2608;
   --nav-bg:rgba(19,18,9,.72); --nav-link:rgba(247,241,232,.82); --nav-btn-bg:rgba(19,18,9,.4);
   --tip-bg:rgba(19,18,9,.94); --grid:rgba(255,240,225,.08); --xhair:rgba(247,241,232,.35);
-  --c-pv:#E8641F; --c-tan:#9A7FD6; --c-si:#14A08C;
+  --c-pv:#E8641F; --c-tan:#9A7FD6; --c-si:#14A08C; --accent-serif:#FFB27A;
   color-scheme:dark;
 }
 /* Photo sections stay cinematic in both themes */
@@ -103,16 +103,19 @@
   --ember:#FF7A2F; --ember-2:#FFB27A; --ember-deep:#8C2608;
   --nav-bg:rgba(19,18,9,.72); --nav-link:rgba(247,241,232,.82); --nav-btn-bg:rgba(19,18,9,.4);
   --tip-bg:rgba(19,18,9,.94); --grid:rgba(255,240,225,.08); --xhair:rgba(247,241,232,.35);
-  --c-pv:#E8641F; --c-tan:#9A7FD6; --c-si:#14A08C;
+  --c-pv:#E8641F; --c-tan:#9A7FD6; --c-si:#14A08C; --accent-serif:#FFB27A;
   color-scheme:dark;
   color:var(--text);
 }
 body{transition:background-color 500ms var(--ease),color 500ms var(--ease)}
 
 /* ================= Text styles ================= */
-.heading-1{font-size:60px;line-height:60px;font-weight:600;letter-spacing:-0.03em}
-.heading-2{font-size:48px;line-height:48px;font-weight:600;letter-spacing:-0.025em}
-.heading-3{font-size:36px;line-height:40px;font-weight:600;letter-spacing:-0.02em}
+.heading-1{font-size:clamp(44px,7.2vw,104px);line-height:.95;font-weight:500;letter-spacing:-0.04em}
+.heading-2{font-size:clamp(36px,4.6vw,60px);line-height:1.02;font-weight:500;letter-spacing:-0.03em}
+.heading-3{font-size:clamp(32px,3.8vw,52px);line-height:1.05;font-weight:500;letter-spacing:-0.03em}
+.ac{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.06em;letter-spacing:-0.02em;color:var(--accent-serif)}
+.riso .ac{color:rgba(243,234,215,.85)}
+.bento .heading-3{font-size:clamp(28px,2.6vw,40px)}
 .heading-5{font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.01em}
 .title-1{font-size:20px;line-height:28px;font-weight:500}
 .title-2{font-size:18px;line-height:28px;font-weight:500}
@@ -131,12 +134,8 @@ body{transition:background-color 500ms var(--ease),color 500ms var(--ease)}
 h1,h2,h3,[class^="heading-"]{text-wrap:balance;margin:0}
 p,li,dd{text-wrap:pretty}
 @media (max-width:760px){
-  .heading-1{font-size:48px;line-height:48px}
-  .heading-2{font-size:36px;line-height:40px}
-  .heading-3{font-size:30px;line-height:36px}
   .stat-1{font-size:36px;line-height:40px}
 }
-@media (max-width:400px){ .heading-1{font-size:36px;line-height:40px} }
 
 /* ================= Base ================= */
 *,*::before,*::after{box-sizing:border-box}
@@ -154,7 +153,7 @@ a:hover{color:var(--text)}
 .skip:focus{transform:none}
 
 /* ================= Buttons ================= */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-75);padding:var(--s-75) var(--s-200);border-radius:9999px;border:1px solid transparent;cursor:pointer;font-family:inherit;white-space:nowrap;
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-75);padding:var(--s-100) var(--s-300);border-radius:9999px;border:1px solid transparent;cursor:pointer;font-family:inherit;white-space:nowrap;
   transition:transform 500ms var(--ease),background-color 300ms var(--ease),color 300ms var(--ease),border-color 300ms var(--ease)}
 .btn:active{transform:scale(0.98)}
 .btn-light{background:var(--cream);color:#1A1208}
@@ -162,25 +161,28 @@ a:hover{color:var(--text)}
 .btn-outline{border-color:var(--line-strong);color:var(--text);background:transparent}
 .btn-outline:hover{background:var(--text);color:var(--bg)}
 
-/* ================= Navigation ================= */
-.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background-color 500ms var(--ease),border-color 500ms var(--ease);border-bottom:1px solid transparent}
-.nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
-.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
-.logo{display:inline-flex;align-items:center;gap:var(--s-75);color:var(--text)}
+/* ================= Navigation (floating pills) ================= */
+.nav{position:fixed;top:16px;left:0;right:0;z-index:40;pointer-events:none}
+.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:var(--s-200)}
+.nav .wrap>*{pointer-events:auto}
+.glass{background:var(--nav-bg);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  transition:background-color 500ms var(--ease),border-color 500ms var(--ease),box-shadow 500ms var(--ease)}
+.nav.scrolled .glass{box-shadow:0 8px 24px rgba(20,10,4,.12)}
+.logo{display:inline-flex;align-items:center;gap:var(--s-75);height:48px;padding:0 var(--s-200) 0 var(--s-100);border-radius:9999px;color:var(--text);justify-self:start}
 .logo:hover{color:var(--text)}
-.logo svg{width:28px;height:28px;transition:transform 500ms var(--ease)}
+.logo svg{width:24px;height:24px;transition:transform 500ms var(--ease)}
 .logo:hover svg{transform:rotate(-8deg)}
-.nav .links{display:flex;gap:var(--s-300)}
-.nav .links a{color:var(--nav-link)}
-.nav .links a:hover,.nav .links a[aria-current="true"]{color:var(--text)}
-.nav .links a[aria-current="true"]{text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--ember)}
+.nav .links{display:flex;align-items:center;gap:2px;padding:4px;border-radius:9999px}
+.nav .links a{color:var(--nav-link);padding:var(--s-75) var(--s-200);border-radius:9999px;line-height:20px;transition:color 300ms var(--ease),background-color 300ms var(--ease)}
+.nav .links a:hover,.nav .links a[aria-current="true"]{color:var(--text);background:var(--surface-2)}
 .nav .right{justify-self:end;display:flex;align-items:center;gap:var(--s-75)}
-.menu-btn{display:none;width:40px;height:40px;border:1px solid var(--line);background:var(--nav-btn-bg);border-radius:9999px;cursor:pointer;position:relative;color:var(--text)}
-.menu-btn span{position:absolute;left:11px;width:16px;height:2px;border-radius:2px;background:currentColor;transition:transform 500ms var(--ease)}
-.menu-btn span:nth-child(1){top:15px}
-.menu-btn span:nth-child(2){top:21px}
-.menu-open .menu-btn span:nth-child(1){transform:translateY(3px) rotate(45deg)}
-.menu-open .menu-btn span:nth-child(2){transform:translateY(-3px) rotate(-45deg)}
+.nav .right .btn{height:48px;padding:0 var(--s-300)}
+.menu-btn{display:none;width:48px;height:48px;border:1px solid var(--line);background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:9999px;cursor:pointer;position:relative;color:var(--text)}
+.menu-btn span{position:absolute;left:15px;width:18px;height:2px;border-radius:2px;background:currentColor;transition:transform 500ms var(--ease)}
+.menu-btn span:nth-child(1){top:19px}
+.menu-btn span:nth-child(2){top:27px}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
 .panel{position:fixed;inset:0;z-index:30;background:var(--tip-bg);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   padding:var(--s-900) var(--s-300) var(--s-400);display:flex;flex-direction:column;gap:var(--s-75);opacity:0;pointer-events:none;transition:opacity 500ms var(--ease)}
 .panel a{color:var(--text);padding:var(--s-100) 0;opacity:0;transform:translateY(24px);transition:opacity 500ms var(--ease),transform 500ms var(--ease)}
@@ -197,56 +199,77 @@ a:hover{color:var(--text)}
 /* ================= Hero (cinematic ember) ================= */
 .hero{position:relative;min-height:max(100svh,680px);display:flex;align-items:center;overflow:hidden;isolation:isolate;
   background:radial-gradient(60% 70% at 74% 50%,#5E1606 0%,#2A0B04 45%,var(--bg) 82%)}
-.hero-art{position:absolute;top:0;bottom:0;right:-4%;width:62%;z-index:-2;mix-blend-mode:screen;
+.hero-art{position:absolute;top:0;bottom:0;right:-9%;width:60%;z-index:-2;mix-blend-mode:screen;
   -webkit-mask-image:radial-gradient(closest-side at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(closest-side at 50% 50%,#000 55%,transparent 100%)}
 .hero-art img{width:100%;height:100%;object-fit:cover;object-position:50% 45%;animation:breathe 14s var(--ease) infinite alternate}
 @keyframes breathe{from{transform:scale(1.02)}to{transform:scale(1.08) translateY(-1%)}}
 .hero canvas{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.hero > .wrap{width:100%;padding-top:var(--s-900);padding-bottom:var(--s-900)}
-.hero-copy{max-width:720px}
-.icon-pill{display:inline-flex;gap:var(--s-50);padding:var(--s-50);border-radius:9999px;border:1px solid var(--line);background:rgba(255,240,225,.06);backdrop-filter:blur(8px);vertical-align:middle;transform:translateY(-6px);margin-left:var(--s-100)}
-.icon-pill span{width:32px;height:32px;display:grid;place-items:center;border-radius:9999px;background:rgba(255,240,225,.06);font-size:16px;color:var(--text)}
-.hero .sub{margin-top:var(--s-300);color:rgba(247,241,232,.82);max-width:480px}
-.who{display:inline-flex;align-items:center;gap:var(--s-200);padding:var(--s-75) var(--s-400) var(--s-75) var(--s-75);margin-bottom:var(--s-300);border-radius:9999px;border:1px solid var(--line);background:rgba(19,18,9,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.who img{width:96px;height:96px;border-radius:9999px;object-fit:cover;object-position:50% 50%;box-shadow:0 0 0 3px var(--ember),0 0 24px rgba(255,122,47,.35)}
-.who .who-name{font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.01em}
-.who .who-role{font-size:16px;line-height:24px;color:var(--muted);margin-top:var(--s-25)}
-@media (max-width:520px){.who{gap:var(--s-100);padding-right:var(--s-200)}.who img{width:72px;height:72px}.who .who-name{font-size:20px;line-height:28px}.who .who-role{font-size:14px;line-height:20px}}
-.hero-in>*:nth-child(4){animation-delay:360ms}
-.email-pill{display:flex;align-items:center;gap:var(--s-75);margin-top:var(--s-400);max-width:440px;padding:var(--s-50) var(--s-50) var(--s-50) var(--s-200);border-radius:9999px;
-  background:rgba(19,18,9,.55);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.email-pill .ph-envelope-simple{color:var(--muted);font-size:16px}
-.email-pill a.addr{color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.copy-btn{width:32px;height:32px;flex:none;display:grid;place-items:center;border-radius:9999px;border:0;background:transparent;color:var(--muted);cursor:pointer;transition:background-color 300ms var(--ease),color 300ms var(--ease)}
-.copy-btn:hover{background:var(--surface-2);color:var(--text)}
-.copy-btn:active{transform:scale(0.98)}
-.copy-status{min-height:16px;margin-top:var(--s-75);padding-left:var(--s-200);color:var(--muted)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.08;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero > .wrap{width:100%;padding-top:var(--s-900);padding-bottom:168px}
+.hero-copy{max-width:900px}
+.eyebrow{display:inline-flex;align-items:center;flex-wrap:wrap;gap:var(--s-100);padding:var(--s-50) var(--s-200) var(--s-50) var(--s-50);margin-bottom:var(--s-400);border-radius:9999px;border:1px solid var(--line);
+  background:rgba(19,18,9,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:rgba(247,241,232,.78)}
+.eyebrow:hover{color:var(--text)}
+.eyebrow img{width:40px;height:40px;border-radius:9999px;object-fit:cover;box-shadow:0 0 0 2px var(--ember)}
+.eyebrow b{color:var(--text);font-weight:600}
+.eyebrow i{color:var(--dim)}
+.hero h1{max-width:12ch}
+.hero h1 .w{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(40px);will-change:transform,filter,opacity;
+  animation:wordIn 700ms cubic-bezier(0.22,1,0.36,1) both;animation-delay:calc(200ms + var(--i) * 90ms)}
+.hero-in>h1{opacity:1;transform:none;animation:none}
+@keyframes wordIn{0%{filter:blur(10px);opacity:0;transform:translateY(40px)}50%{filter:blur(4px);opacity:.6;transform:translateY(-4px)}100%{filter:blur(0);opacity:1;transform:none}}
+.hero .sub{margin-top:var(--s-400);color:rgba(247,241,232,.8);max-width:520px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:var(--s-100);margin-top:var(--s-500)}
+.hero .actions .ph{font-size:16px}
 .trust{position:absolute;left:0;right:0;bottom:var(--s-400)}
 .trust .wrap{display:flex;align-items:center;gap:var(--s-200)}
-.monos{display:flex;flex:none}
-.monos span{width:40px;height:40px;border-radius:9999px;display:grid;place-items:center;margin-left:-10px;border:2px solid var(--bg);background:#2A1A12;color:var(--cream);font-size:10px;line-height:12px;font-weight:700}
-.monos span:first-child{margin-left:0;background:var(--ember-deep)}
-.monos span,.monos span:first-child,.monos span:nth-child(2),.monos span:nth-child(3),.monos span:nth-child(4){width:52px;height:52px;background:#FFFFFF;overflow:hidden;box-shadow:0 0 0 1px rgba(255,240,225,.18)}
-.monos{gap:var(--s-75)}
-.monos span+span,.monos span:first-child{margin-left:0}
+.insts{display:flex;align-items:center;gap:var(--s-200);margin-top:var(--s-500);padding-top:var(--s-300);border-top:1px solid rgba(255,240,225,.14);max-width:640px}
+.monos{display:flex;gap:var(--s-75);list-style:none;margin:0;padding:0;flex:none}
+.monos li{width:52px;height:52px;border-radius:9999px;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 1px rgba(255,240,225,.18),0 8px 24px -8px rgba(0,0,0,.6);transition:transform 500ms var(--ease)}
+.monos li:hover{transform:translateY(-3px)}
 .monos img{width:38px;height:38px;object-fit:contain}
-.trust p{font-size:16px;line-height:24px;font-weight:500;color:rgba(247,241,232,.88);max-width:560px}
-@media (max-width:520px){ .trust p{font-size:14px;line-height:20px} }
-.scroll-cue{margin-left:auto;display:inline-flex;align-items:center;gap:var(--s-75);color:var(--muted)}
-.scroll-cue .ph{animation:nudge 2.4s var(--ease) infinite}
-@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.insts p{color:rgba(247,241,232,.78);font-size:15px;line-height:22px}
+.insts b{color:var(--text);font-weight:600}
+.socials{margin-left:auto;display:flex;gap:var(--s-75)}
+.soc{width:44px;height:44px;display:grid;place-items:center;border-radius:9999px;border:1px solid var(--line);background:rgba(19,18,9,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--text);
+  transition:transform 500ms var(--ease),background-color 300ms var(--ease),border-color 300ms var(--ease),color 300ms var(--ease)}
+.soc .ph{font-size:20px}
+.soc .orcid{width:20px;height:20px}
+.soc:hover{transform:translateY(-2px);background:var(--cream);border-color:var(--cream);color:#1A1208}
+.soc:active{transform:scale(0.98)}
 @media (max-width:900px){
   .hero{align-items:flex-end;background:radial-gradient(90% 55% at 60% 28%,#5E1606 0%,#2A0B04 50%,var(--bg) 90%)}
   .hero-art{width:130%;right:-35%;top:0;bottom:35%;opacity:.8}
-  .hero > .wrap{padding-top:280px;padding-bottom:144px}
-  .scroll-cue{display:none}
+  .hero > .wrap{padding-top:220px;padding-bottom:168px}
+}
+/* short laptop screens: keep the institution logos inside the first screen */
+@media (min-width:901px) and (max-height:860px){
+  .hero > .wrap{padding-top:88px;padding-bottom:72px}
+  .hero h1{font-size:clamp(44px,min(7.2vw,11.5svh),104px)}
+  .eyebrow{margin-bottom:var(--s-300)}
+  .hero .sub{margin-top:var(--s-300)}
+  .hero .actions{margin-top:var(--s-300)}
+  .insts{margin-top:var(--s-300);padding-top:var(--s-200)}
+}
+@media (max-width:400px){ .eyebrow{flex-wrap:nowrap;font-size:11px;white-space:nowrap} }
+@media (max-width:900px) and (max-height:740px){
+  .hero{min-height:100svh}
+  .hero > .wrap{padding-top:96px;padding-bottom:88px}
+  .eyebrow{margin-bottom:var(--s-200)}
+  .hero .sub{margin-top:var(--s-200);font-size:16px;line-height:24px}
+  .hero .actions{margin-top:var(--s-300)}
+  .insts{margin-top:var(--s-300);padding-top:var(--s-200)}
 }
 @media (max-width:520px){
   .wrap{padding:0 var(--s-200)}
-  .icon-pill{display:none}
+  .eyebrow{font-size:12px;line-height:16px;gap:var(--s-75)}
+  .eyebrow .r1{display:none}
+  .hero .actions .btn{flex:1 1 auto}
   .trust{bottom:var(--s-300)}
-  .monos span,.monos span:first-child,.monos span:nth-child(2),.monos span:nth-child(3),.monos span:nth-child(4){width:40px;height:40px}
-  .monos img{width:30px;height:30px}
+  .insts{flex-direction:column;align-items:flex-start;gap:var(--s-100);margin-top:var(--s-400);padding-top:var(--s-200)}
+  .monos li{width:44px;height:44px}
+  .monos img{width:32px;height:32px}
+  .insts p{font-size:13px;line-height:18px}
 }
 
 /* ================= Section scaffolding ================= */
@@ -385,7 +408,8 @@ section{position:relative;padding:var(--s-900) 0}
 .tagline p{max-width:920px}
 .tagline .w{color:var(--text-faint);transition:color 500ms var(--ease)}
 .tagline .w.on{color:var(--text)}
-.tagline .w.hl.on{color:var(--ember-2)}
+.tagline .w.hl{font-family:var(--serif);font-style:italic;font-size:1.06em}
+.tagline .w.hl.on{color:var(--accent-serif)}
 
 /* ================= Publications ================= */
 .pubs{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-100)}
@@ -433,6 +457,15 @@ section{position:relative;padding:var(--s-900) 0}
 .faq details p{padding-bottom:var(--s-300);color:var(--muted);max-width:680px}
 
 /* ================= Contact ================= */
+.email-pill{display:flex;align-items:center;gap:var(--s-75);margin-top:var(--s-400);max-width:440px;padding:var(--s-50) var(--s-50) var(--s-50) var(--s-200);border-radius:9999px;
+  background:rgba(19,18,9,.55);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.email-pill .ph-envelope-simple{color:var(--muted);font-size:16px}
+.email-pill a.addr{color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.email-pill .btn{padding:var(--s-75) var(--s-200)}
+.copy-btn{width:32px;height:32px;flex:none;display:grid;place-items:center;border-radius:9999px;border:0;background:transparent;color:var(--muted);cursor:pointer;transition:background-color 300ms var(--ease),color 300ms var(--ease)}
+.copy-btn:hover{background:var(--surface-2);color:var(--text)}
+.copy-btn:active{transform:scale(0.98)}
+.copy-status{min-height:16px;margin-top:var(--s-75);padding-left:var(--s-200);color:var(--muted)}
 .contact{overflow:hidden;isolation:isolate}
 .contact .bgimg{position:absolute;inset:0;z-index:-2;opacity:.6}
 .contact .bgimg img{width:100%;height:100%;object-fit:cover}
@@ -511,7 +544,7 @@ section{position:relative;padding:var(--s-900) 0}
 .faq details[open] p{animation:faqIn 500ms var(--ease)}
 @keyframes faqIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 .contact::before{content:"";position:absolute;width:520px;height:520px;left:50%;bottom:-260px;margin-left:-260px;border-radius:50%;z-index:-1;
-  background:radial-gradient(closest-side,rgba(255,122,47,.25),transparent);animation:breatheGlow 8s ease-in-out infinite alternate}
+  background:radial-gradient(closest-side,rgba(255,122,47,.25),transparent)}
 @keyframes breatheGlow{from{transform:scale(.9);opacity:.7}to{transform:scale(1.1);opacity:1}}
 @media (prefers-reduced-motion: reduce){
   .how-track{height:auto}
@@ -527,17 +560,7 @@ section{position:relative;padding:var(--s-900) 0}
 }
 
 /* ================= Reach-out pieces ================= */
-.hero-in>*:nth-child(5){animation-delay:480ms}
-.socials{display:flex;flex-wrap:wrap;gap:var(--s-75);margin-top:var(--s-100)}
-.soc{display:inline-flex;align-items:center;gap:var(--s-75);padding:var(--s-75) var(--s-200) var(--s-75) var(--s-100);border-radius:9999px;border:1px solid var(--line);
-  background:rgba(19,18,9,.45);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--text);
-  transition:transform 500ms var(--ease),background-color 300ms var(--ease),border-color 300ms var(--ease),color 300ms var(--ease)}
-.soc .ph{font-size:18px;color:var(--ember-2);transition:color 300ms var(--ease)}
-.soc .orcid{width:18px;height:18px;color:var(--ember-2);flex:none}
-.soc:hover{transform:translateY(-2px);background:var(--cream);border-color:var(--cream);color:#1A1208}
-.soc:hover .ph,.soc:hover .orcid{color:#1A1208}
-.soc:active{transform:scale(0.98)}
-.theme-btn{width:40px;height:40px;border-radius:9999px;border:1px solid var(--line);background:var(--nav-btn-bg);color:var(--text);display:grid;place-items:center;cursor:pointer;font-size:18px;
+.theme-btn{width:48px;height:48px;border-radius:9999px;border:1px solid var(--line);background:var(--nav-btn-bg);color:var(--text);display:grid;place-items:center;cursor:pointer;font-size:18px;
   transition:transform 500ms var(--ease),background-color 300ms var(--ease),color 300ms var(--ease)}
 .theme-btn:hover{transform:rotate(-15deg);background:var(--surface-2)}
 .theme-btn:active{transform:scale(0.98)}
@@ -581,7 +604,7 @@ footer a:hover{color:var(--text)}
 .stagger.in>*:nth-child(2){transition-delay:80ms}.stagger.in>*:nth-child(3){transition-delay:160ms}
 .stagger.in>*:nth-child(4){transition-delay:240ms}.stagger.in>*:nth-child(5){transition-delay:320ms}.stagger.in>*:nth-child(6){transition-delay:400ms}
 .hero-in>*{opacity:0;transform:translateY(24px);animation:rise 900ms var(--ease) forwards}
-.hero-in>*:nth-child(2){animation-delay:120ms}.hero-in>*:nth-child(3){animation-delay:240ms}
+.hero-in>*:nth-child(3){animation-delay:760ms}.hero-in>*:nth-child(4){animation-delay:900ms}.hero-in>*:nth-child(5){animation-delay:1040ms}
 @keyframes rise{to{opacity:1;transform:none}}
 
 @media (prefers-reduced-motion: reduce){
@@ -593,6 +616,7 @@ footer a:hover{color:var(--text)}
   .seg{transform:none;transition:none}
   .btn:hover,.pub:hover,.bento .card:hover,.rcard:hover figure img{transform:none}
   .tagline .w{color:var(--text);transition:none}
+  .hero h1 .w{opacity:1;filter:none;transform:none}
 }
 </style>
 </head>
@@ -603,11 +627,11 @@ footer a:hover{color:var(--text)}
 <!-- ============ NAV ============ -->
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="logo title-3" href="#top" aria-label="Jatismar Saha, home">
+    <a class="logo glass title-3" href="#top" aria-label="Jatismar Saha, home">
       <svg viewBox="0 0 64 64" aria-hidden="true"><defs><clipPath id="logoClip"><circle cx="32" cy="32" r="28"/></clipPath></defs><g clip-path="url(#logoClip)"><rect width="64" height="31" fill="#FF7A2F"/><rect y="35" width="64" height="7" fill="#F26A24"/><rect y="46" width="64" height="5" fill="#DB561A"/><rect y="55" width="64" height="5" fill="#BF4511"/></g></svg>
       <span>Jatismar Saha</span>
     </a>
-    <div class="links title-4">
+    <div class="links glass title-4">
       <a href="#achievements">Achievements</a>
       <a href="#publications">Publications</a>
       <a href="#research">Research</a>
@@ -615,8 +639,8 @@ footer a:hover{color:var(--text)}
       <a href="#path">Path</a>
     </div>
     <div class="right">
-      <button class="theme-btn" type="button" aria-label="Switch to dark mode"><span class="ph ph-moon" aria-hidden="true"></span></button>
-      <a class="btn btn-outline button-sm" href="#contact">Get in touch</a>
+      <button class="theme-btn glass" type="button" aria-label="Switch to dark mode"><span class="ph ph-moon" aria-hidden="true"></span></button>
+      <a class="btn btn-outline glass button-sm" href="#contact">Get in touch</a>
       <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="panel"><span></span><span></span></button>
     </div>
   </div>
@@ -638,34 +662,34 @@ footer a:hover{color:var(--text)}
   <canvas id="photons" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="hero-copy hero-in">
-      <div class="who">
-        <img src="photo.jpg" alt="Portrait of Jatismar Saha" width="96" height="96">
-        <div><p class="who-name">Jatismar Saha</p><p class="who-role">PhD researcher &middot; JST-LOTUS Fellow, NIMS</p></div>
+      <a class="eyebrow caption-1" href="#path">
+        <img src="photo.jpg" alt="Portrait of Jatismar Saha" width="40" height="40">
+        <b>Jatismar Saha</b><i class="r1" aria-hidden="true">&middot;</i><span class="r1">PhD researcher, IIT Guwahati</span><i aria-hidden="true">&middot;</i><span>JST-LOTUS Fellow, NIMS Japan</span>
+      </a>
+      <h1 class="heading-1"><span class="w" style="--i:0">Solar</span> <span class="w" style="--i:1">cells</span> <em class="ac"><span class="w" style="--i:2">without</span> <span class="w" style="--i:3">the</span> <span class="w" style="--i:4">lead.</span></em></h1>
+      <p class="sub body-7">I make, measure and model tin-based perovskite solar cells, at IIT Guwahati and, as a JST-LOTUS Fellow, at NIMS in Tsukuba, Japan.</p>
+      <div class="actions">
+        <a class="btn btn-light button-sm" href="mailto:j.saha@iitg.ac.in?subject=Research%20collaboration">Email me <span class="ph ph-arrow-up-right" aria-hidden="true"></span></a>
+        <a class="btn btn-outline button-sm" href="Jatismar_Saha_CV.pdf" download><span class="ph ph-file-arrow-down" aria-hidden="true"></span>Download CV</a>
       </div>
-      <h1 class="heading-1">Solar cells<br>without the lead<span class="icon-pill" role="list" aria-label="My workflow: light, fabrication, characterization, simulation"><span class="ph ph-sun" role="listitem" title="Light: sunlight into current"></span><span class="ph ph-flask" role="listitem" title="Fabrication: tin perovskite films in the glovebox"></span><span class="ph ph-microscope" role="listitem" title="Characterization: FESEM, XRD, UV-Vis"></span><span class="ph ph-cpu" role="listitem" title="Simulation: device modeling in Sentaurus TCAD"></span></span></h1>
-      <p class="sub body-7">I'm Jatismar Saha, a PhD researcher at IIT Guwahati and JST-LOTUS Fellow at NIMS, Japan. I make, measure and model tin-based perovskite solar cells.</p>
-      <div class="email-wrap">
-        <div class="email-pill">
-          <span class="ph ph-envelope-simple" aria-hidden="true"></span>
-          <a class="addr body-6" href="mailto:j.saha@iitg.ac.in">j.saha@iitg.ac.in</a>
-          <button class="copy-btn" type="button" data-copy="j.saha@iitg.ac.in" aria-label="Copy email address"><span class="ph ph-copy" aria-hidden="true"></span></button>
-          <a class="btn btn-light button-sm" href="mailto:j.saha@iitg.ac.in?subject=Research%20collaboration">Email me</a>
-        </div>
-        <p class="copy-status caption-5" role="status" aria-live="polite"></p>
+      <div class="insts">
+        <ul class="monos" aria-label="Institutions">
+          <li><img src="img/logos/nims.svg" alt="NIMS, Japan" title="NIMS, Japan" width="38" height="38"></li>
+          <li><img src="img/logos/iitg.svg" alt="IIT Guwahati" title="IIT Guwahati" width="38" height="38"></li>
+          <li><img src="img/logos/nits.svg" alt="NIT Silchar" title="NIT Silchar" width="38" height="38"></li>
+          <li><img src="img/logos/nehu.png" alt="North-Eastern Hill University" title="NEHU" width="38" height="38"></li>
+        </ul>
+        <p class="caption-5">Studied and trained at <b>NIMS&nbsp;Japan</b>, <b>IIT&nbsp;Guwahati</b>, <b>NIT&nbsp;Silchar</b> and <b>NEHU</b></p>
       </div>
-      <nav class="socials" aria-label="Research profiles">
-        <a class="soc caption-1" href="https://www.linkedin.com/in/jatismar-saha" rel="me noopener" target="_blank"><span class="ph ph-linkedin-logo" aria-hidden="true"></span>LinkedIn</a>
-        <a class="soc caption-1" href="https://scholar.google.com/citations?user=4rPTNDYAAAAJ" rel="me noopener" target="_blank"><span class="ph ph-graduation-cap" aria-hidden="true"></span>Google Scholar</a>
-        <a class="soc caption-1" href="https://orcid.org/0009-0009-4859-5051" rel="me noopener" target="_blank"><svg class="orcid" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="12" y="16" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="700" font-size="10" fill="currentColor">iD</text></svg>ORCID</a>
-        <a class="soc caption-1" href="Jatismar_Saha_CV.pdf" download><span class="ph ph-file-arrow-down" aria-hidden="true"></span>CV</a>
-      </nav>
     </div>
   </div>
   <div class="trust">
     <div class="wrap">
-      <div class="monos" aria-hidden="true"><span title="NIMS, Japan"><img src="img/logos/nims.svg" alt=""></span><span title="IIT Guwahati"><img src="img/logos/iitg.svg" alt=""></span><span title="NIT Silchar"><img src="img/logos/nits.svg" alt=""></span><span title="NEHU"><img src="img/logos/nehu.png" alt=""></span></div>
-      <p class="caption-5">Studied and trained at NIMS Japan, IIT Guwahati, NIT Silchar and NEHU</p>
-      <a class="scroll-cue caption-4" href="#achievements">See the achievements <span class="ph ph-arrow-down" aria-hidden="true"></span></a>
+      <nav class="socials" aria-label="Research profiles">
+        <a class="soc" href="https://www.linkedin.com/in/jatismar-saha" rel="me noopener" target="_blank" aria-label="LinkedIn"><span class="ph ph-linkedin-logo" aria-hidden="true"></span></a>
+        <a class="soc" href="https://scholar.google.com/citations?user=4rPTNDYAAAAJ" rel="me noopener" target="_blank" aria-label="Google Scholar"><span class="ph ph-graduation-cap" aria-hidden="true"></span></a>
+        <a class="soc" href="https://orcid.org/0009-0009-4859-5051" rel="me noopener" target="_blank" aria-label="ORCID"><svg class="orcid" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="12" y="16" text-anchor="middle" font-family="Manrope, sans-serif" font-weight="700" font-size="10" fill="currentColor">iD</text></svg></a>
+      </nav>
     </div>
   </div>
 </header>
@@ -676,7 +700,7 @@ footer a:hover{color:var(--text)}
   <div class="wrap grid">
     <div class="reveal" id="glance">
       <p class="brandline title-4"><b aria-hidden="true"><span class="ph ph-trophy"></span></b>Achievements at a glance</p>
-      <h2 id="ach-h" class="heading-3">Five papers. Two countries.<br>One fellowship.</h2>
+      <h2 id="ach-h" class="heading-3">Five papers. Two countries.<br><em class="ac">One fellowship.</em></h2>
       <p class="lead body-6">Four of five publications are first-authored, with 11 citations on Google Scholar so far. Here is the record in numbers.</p>
       <dl class="stats">
         <div><dt class="caption-2">Publications</dt><dd class="stat-1"><span data-count="5">5</span></dd><span class="note caption-5">4 journal papers, 1 book chapter</span></div>
@@ -745,7 +769,7 @@ footer a:hover{color:var(--text)}
   <div class="wrap">
     <div class="section-head reveal">
       <p class="kicker caption-3">Publications</p>
-      <h2 id="pubs-h" class="heading-3">Peer-reviewed work</h2>
+      <h2 id="pubs-h" class="heading-3">Peer-reviewed <em class="ac">work</em></h2>
     </div>
     <ol class="pubs stagger">
       <li class="pub">
@@ -809,7 +833,7 @@ footer a:hover{color:var(--text)}
   <div class="wrap">
     <div class="section-head reveal">
       <p class="kicker caption-3">Research</p>
-      <h2 id="research-h" class="heading-3">Why lead-free perovskites?</h2>
+      <h2 id="research-h" class="heading-3">Why <em class="ac">lead-free</em> perovskites?</h2>
       <p class="lead body-7">The best perovskite solar cells still contain lead, and that is a big reason they are not on rooftops yet. Tin-based perovskites are safer, but they still lag behind lead-based cells in efficiency and stability. My work is about closing that gap.</p>
     </div>
     <div class="research stagger">
@@ -852,7 +876,7 @@ footer a:hover{color:var(--text)}
       <div class="wrap how-grid">
         <div class="how-text">
           <p class="kicker caption-3">How it works</p>
-          <h2 id="how-h" class="heading-3">How a perovskite solar cell turns light into current</h2>
+          <h2 id="how-h" class="heading-3">How a perovskite solar cell turns <em class="ac">light into current</em></h2>
           <ol class="how-dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol>
           <div class="how-steps">
             <article class="hw-step" data-i="0"><p class="n caption-3">01 &middot; Light enters</p><h3 class="heading-5">Sunlight reaches the absorber</h3><p class="body-3">Photons pass through the glass and the transparent electrode (ITO) and reach the perovskite layer, which is only a few hundred nanometres thick.</p></article>
@@ -912,7 +936,7 @@ footer a:hover{color:var(--text)}
     <div>
       <div class="section-head reveal">
         <p class="kicker caption-3">Path</p>
-        <h2 id="path-h" class="heading-3">Experience and education</h2>
+        <h2 id="path-h" class="heading-3">Experience <em class="ac">and education</em></h2>
       </div>
       <ol class="path stagger">
         <li class="now"><p class="when caption-3">May 2026 to present</p><h3 class="title-2">JST-LOTUS Fellow, Photovoltaic Materials Group, NIMS Tsukuba</h3><p class="d body-6">Research Center for Energy and Environmental Materials (GREEN). Host: Group Leader Yasuhiro Shirai. Fabricating tin-based perovskite solar cells in the glovebox, with training in FESEM and XRD.</p></li>
@@ -925,7 +949,7 @@ footer a:hover{color:var(--text)}
     <div id="skills">
       <div class="section-head reveal">
         <p class="kicker caption-3">Skills</p>
-        <h2 class="heading-3">Methods and tools</h2>
+        <h2 class="heading-3">Methods <em class="ac">and tools</em></h2>
       </div>
       <div class="skillset stagger">
         <div><h3 class="title-4">Lab</h3><div class="chips body-6"><span class="chip">Glovebox processing</span><span class="chip">Spin coating</span><span class="chip">Thermal evaporation</span><span class="chip">RF sputtering</span><span class="chip">PECVD</span><span class="chip">Oxidation and diffusion furnace</span></div></div>
@@ -946,7 +970,7 @@ footer a:hover{color:var(--text)}
       <div class="portrait"><img src="photo.jpg" alt="Portrait of Jatismar Saha" onerror="this.remove()"><span aria-hidden="true">JS</span></div>
       <div>
         <p class="kicker caption-3">Contact</p>
-        <h2 id="contact-h" class="heading-2">Working on safer solar cells?<br>Let's talk.</h2>
+        <h2 id="contact-h" class="heading-2">Working on safer solar cells?<br><em class="ac">Let's talk.</em></h2>
         <p class="lead body-7">I'm open to research collaborations now, and to postdoctoral and R&amp;D roles in photovoltaics after my PhD.</p>
         <div class="email-wrap">
           <div class="email-pill">
