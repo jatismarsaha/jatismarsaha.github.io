@@ -318,7 +318,15 @@ section{position:relative;padding:var(--s-900) 0}
 .pub .doi:hover{background:var(--text);color:var(--bg);transform:rotate(45deg)}
 .pub .badges{display:flex;flex-wrap:wrap;gap:var(--s-75);margin-top:var(--s-100)}
 .more{margin-top:var(--s-300);color:var(--muted)}
-@media (max-width:640px){ .pub{grid-template-columns:1fr auto;gap:var(--s-100) var(--s-200)} .pub .year{grid-column:1/-1} }
+.pub .no{display:block;font-size:40px;line-height:40px;font-weight:500;letter-spacing:-0.04em;color:var(--text);opacity:.22;margin-bottom:var(--s-75);transition:opacity 300ms var(--ease),color 300ms var(--ease)}
+.pub:hover .no{opacity:1;color:var(--ember-2)}
+.pub .gist{margin-top:var(--s-100);color:var(--text);max-width:640px}
+.pub .gist span{display:inline-block;margin-right:var(--s-75);color:var(--ember-2);font-weight:600}
+.roll{display:inline-block;height:20px;overflow:hidden;vertical-align:top}
+.roll>span{display:block;text-shadow:0 20px 0 currentColor;transition:transform 450ms var(--ease)}
+.nav .links a:hover .roll>span{transform:translateY(-20px)}
+@media (prefers-reduced-motion: reduce){ .nav .links a:hover .roll>span{transform:none} }
+@media (max-width:640px){ .pub{grid-template-columns:1fr auto;gap:var(--s-100) var(--s-200)} .pub .year{grid-column:1/-1} .pub .no{display:inline;font-size:24px;line-height:24px;margin:0 var(--s-75) 0 0;vertical-align:-2px} }
 
 /* ================= Path + skills ================= */
 .two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-700)}
@@ -440,9 +448,9 @@ footer a:hover{color:var(--text)}
       <span>Jatismar Saha</span>
     </a>
     <div class="links glass title-4">
-      <a href="#publications">Publications</a>
-      <a href="#research">Research</a>
-      <a href="#path">Path</a>
+      <a href="#publications"><span class="roll"><span>Publications</span></span></a>
+      <a href="#research"><span class="roll"><span>Research</span></span></a>
+      <a href="#path"><span class="roll"><span>Path</span></span></a>
     </div>
     <div class="right">
       <button class="theme-btn glass" type="button" aria-label="Switch to dark mode"><span class="ph ph-moon" aria-hidden="true"></span></button>
@@ -507,51 +515,56 @@ footer a:hover{color:var(--text)}
     </div>
     <ol class="pubs stagger">
       <li class="pub">
-        <span class="year caption-3">2025 &middot; Journal</span>
+        <span class="year caption-3"><b class="no">01</b>2025 &middot; Journal</span>
         <div>
           <h3 class="title-2">Radiation Effects in Silicon-On-Insulator n-p-n Double-Gate TFET: A Simulation Study</h3>
           <p class="authors body-6"><span class="me">J. Saha</span>, B. Choudhuri, R. Saha</p>
           <p class="venue caption-1">physica status solidi (a) 222 (2025) e202500615</p>
+          <p class="gist body-6"><span>In short</span>What radiation does to a double-gate tunnel FET built on silicon-on-insulator, studied in simulation.</p>
           <div class="badges caption-4"><span class="pill hot">First author</span><span class="pill">Radiation effects</span></div>
         </div>
         <a class="doi" href="https://doi.org/10.1002/pssa.202500615" target="_blank" rel="noopener" aria-label="Open paper, doi 10.1002/pssa.202500615"><span class="ph ph-arrow-up-right" aria-hidden="true"></span></a>
       </li>
       <li class="pub">
-        <span class="year caption-3">2025 &middot; Journal</span>
+        <span class="year caption-3"><b class="no">02</b>2025 &middot; Journal</span>
         <div>
           <h3 class="title-2">Investigating the Effects of Interface Trap Charges and Temperature on N-Type Step Tunneling Path TFET</h3>
           <p class="authors body-6"><span class="me">J. Saha</span>, M. P. Gogoi, B. Choudhuri, R. Saha</p>
           <p class="venue caption-1">Analog Integrated Circuits and Signal Processing 125 (2025) 17</p>
+          <p class="gist body-6"><span>In short</span>How interface trap charges and temperature change the behaviour of a step tunneling path TFET.</p>
           <div class="badges caption-4"><span class="pill hot">First author</span><span class="pill">Interface traps</span></div>
         </div>
         <a class="doi" href="https://doi.org/10.1007/s10470-025-02505-x" target="_blank" rel="noopener" aria-label="Open paper, doi 10.1007/s10470-025-02505-x"><span class="ph ph-arrow-up-right" aria-hidden="true"></span></a>
       </li>
       <li class="pub">
-        <span class="year caption-3">2025 &middot; Journal</span>
+        <span class="year caption-3"><b class="no">03</b>2025 &middot; Journal</span>
         <div>
           <h3 class="title-2">Investigating the Effects of Heavy-ion Radiation on n-Type Step Tunnelling Path TFET</h3>
           <p class="authors body-6"><span class="me">J. Saha</span>, M. P. Gogoi, S. Tiwari, B. Choudhuri, R. Saha</p>
           <p class="venue caption-1">Micro and Nanostructures 207 (2025) 208269</p>
+          <p class="gist body-6"><span>In short</span>How heavy-ion strikes affect a step tunnelling path TFET.</p>
           <div class="badges caption-4"><span class="pill hot">First author</span><span class="pill">Heavy-ion radiation</span></div>
         </div>
         <a class="doi" href="https://doi.org/10.1016/j.micrna.2025.208269" target="_blank" rel="noopener" aria-label="Open paper, doi 10.1016/j.micrna.2025.208269"><span class="ph ph-arrow-up-right" aria-hidden="true"></span></a>
       </li>
       <li class="pub">
-        <span class="year caption-3">2025 &middot; Journal</span>
+        <span class="year caption-3"><b class="no">04</b>2025 &middot; Journal</span>
         <div>
           <h3 class="title-2">Work Function Engineering on Electrical Parameters for Step Tunneling Path TFET</h3>
           <p class="authors body-6">A. Singh, P. Hazarika, <span class="me">J. Saha</span>, M. P. Gogoi, R. Goswami, R. Saha</p>
           <p class="venue caption-1">Transactions on Electrical and Electronic Materials 26 (2025) 814&ndash;821</p>
+          <p class="gist body-6"><span>In short</span>How the choice of gate work function shapes the electrical parameters of a step tunneling path TFET.</p>
           <div class="badges caption-4"><span class="pill">Co-author</span><span class="pill">Work function engineering</span></div>
         </div>
         <a class="doi" href="https://doi.org/10.1007/s42341-025-00627-7" target="_blank" rel="noopener" aria-label="Open paper, doi 10.1007/s42341-025-00627-7"><span class="ph ph-arrow-up-right" aria-hidden="true"></span></a>
       </li>
       <li class="pub">
-        <span class="year caption-3">2023 &middot; Book chapter</span>
+        <span class="year caption-3"><b class="no">05</b>2023 &middot; Book chapter</span>
         <div>
           <h3 class="title-2">Development of a Smart Railway Platform System</h3>
           <p class="authors body-6"><span class="me">J. Saha</span>, R. Choudhuri, D. Kalita, J. Swarnakar</p>
           <p class="venue caption-1">Futuristic Trends in Network &amp; Communication Technologies, IIP Series 3 (2023), pp. 186&ndash;196</p>
+          <p class="gist body-6"><span>In short</span>An embedded system for smarter railway platforms.</p>
           <div class="badges caption-4"><span class="pill hot">First author</span><span class="pill">Embedded systems</span></div>
         </div>
         <a class="doi" href="https://doi.org/10.58532/V3BINC3P6CH5" target="_blank" rel="noopener" aria-label="Open chapter, doi 10.58532/V3BINC3P6CH5"><span class="ph ph-arrow-up-right" aria-hidden="true"></span></a>
