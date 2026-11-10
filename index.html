@@ -29,7 +29,7 @@
 <link rel="preload" as="image" href="img/hero-cell.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
 <script type="application/ld+json">
 {
@@ -72,7 +72,7 @@
   --ember:#E8641F; --ember-2:#B04A12; --ember-deep:#8C2608;
   --nav-bg:rgba(251,247,241,.82); --nav-link:#4A3F35; --nav-btn-bg:transparent;
   --tip-bg:rgba(255,255,255,.97); --grid:rgba(60,30,10,.09); --xhair:rgba(28,20,12,.35);
-  --c-pv:#D2541A; --c-tan:#7B5CC4; --c-si:#0E8A78; --accent-serif:#B04A12; --serif:"Instrument Serif",Georgia,serif;
+  --c-pv:#D2541A; --c-tan:#7B5CC4; --c-si:#0E8A78; --accent-serif:#B04A12;
   color-scheme:light;
 }
 /* Dark theme: device preference (unless the visitor chose light), or an explicit choice */
@@ -110,10 +110,10 @@
 body{transition:background-color 500ms var(--ease),color 500ms var(--ease)}
 
 /* ================= Text styles ================= */
-.heading-1{font-size:clamp(44px,7.2vw,104px);line-height:.95;font-weight:500;letter-spacing:-0.04em}
+.heading-1{font-size:clamp(40px,6.2vw,92px);line-height:.95;font-weight:500;letter-spacing:-0.04em}
 .heading-2{font-size:clamp(36px,4.6vw,60px);line-height:1.02;font-weight:500;letter-spacing:-0.03em}
 .heading-3{font-size:clamp(32px,3.8vw,52px);line-height:1.05;font-weight:500;letter-spacing:-0.03em}
-.ac{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.06em;letter-spacing:-0.02em;color:var(--accent-serif)}
+.ac{font-style:normal;color:var(--accent-serif)}
 .bento .heading-3{font-size:clamp(28px,2.6vw,40px)}
 .heading-5{font-size:24px;line-height:32px;font-weight:600;letter-spacing:-0.01em}
 .title-1{font-size:20px;line-height:28px;font-weight:500}
@@ -245,7 +245,7 @@ a:hover{color:var(--text)}
 /* short laptop screens: keep the institution logos inside the first screen */
 @media (min-width:901px) and (max-height:860px){
   .hero > .wrap{padding-top:88px;padding-bottom:72px}
-  .hero h1{font-size:clamp(44px,min(7.2vw,11.5svh),104px)}
+  .hero h1{font-size:clamp(40px,min(6.2vw,11svh),92px)}
   .eyebrow{margin-bottom:var(--s-300)}
   .hero .sub{margin-top:var(--s-300)}
   .hero .actions{margin-top:var(--s-300)}
@@ -633,7 +633,7 @@ footer a:hover{color:var(--text)}
         <h2 class="heading-3">Methods <em class="ac">and tools</em></h2>
       </div>
       <div class="skillset stagger">
-        <div><h3 class="title-4">Lab</h3><div class="chips body-6"><span class="chip">Glovebox processing</span><span class="chip">Spin coating</span><span class="chip">Thermal evaporation</span><span class="chip">RF sputtering</span><span class="chip">PECVD</span><span class="chip">Oxidation and diffusion furnace</span></div></div>
+        <div><h3 class="title-4">Lab</h3><div class="chips body-6"><span class="chip">Glovebox operation</span><span class="chip">Spin coating</span><span class="chip">Thermal evaporation</span><span class="chip">RF sputtering</span><span class="chip">PECVD</span><span class="chip">Oxidation and diffusion furnace</span></div></div>
         <div><h3 class="title-4">Characterization</h3><div class="chips body-6"><span class="chip">FESEM</span><span class="chip">XRD</span><span class="chip">UV-Vis spectroscopy</span></div></div>
         <div><h3 class="title-4">Simulation and design</h3><div class="chips body-6"><span class="chip">Sentaurus TCAD</span><span class="chip">Cadence Virtuoso</span><span class="chip">Xilinx Vivado</span><span class="chip">Python</span><span class="chip">KiCAD</span><span class="chip">Eagle PCB</span></div></div>
         <p class="langs body-6"><strong>Languages</strong> &nbsp;English, Hindi, Assamese and Bengali; currently learning Japanese</p>
