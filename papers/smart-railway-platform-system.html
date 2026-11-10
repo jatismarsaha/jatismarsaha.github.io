@@ -1,0 +1,115 @@
+<!doctype html><html lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF7F1;--surface:rgba(60,30,10,.035);--line:rgba(60,30,10,.13);--text:#1C140C;--muted:#5E5246;--accent:#B04A12;--accent-ink:#1A1208;--from:#1C140C;--to:#5E5246;--ease:cubic-bezier(0.22,1,0.36,1)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#131209;--surface:rgba(255,240,225,.04);--line:rgba(255,240,225,.12);--text:#F7F1E8;--muted:#B4A898;--accent:#FFB27A;--accent-ink:#1A1208;--from:#F7F1E8;--to:#B4A898;--ease:cubic-bezier(0.22,1,0.36,1)}}
+:root[data-theme="dark"]{--bg:#131209;--surface:rgba(255,240,225,.04);--line:rgba(255,240,225,.12);--text:#F7F1E8;--muted:#B4A898;--accent:#FFB27A;--accent-ink:#1A1208;--from:#F7F1E8;--to:#B4A898;--ease:cubic-bezier(0.22,1,0.36,1)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Manrope",ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:24px}
+main{max-width:680px;margin:0 auto;padding:96px 16px}
+h1{margin:0;font-size:48px;line-height:48px;font-weight:600;text-wrap:balance;background:linear-gradient(90deg,var(--from),var(--to));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{margin:32px 0 8px;font-size:20px;line-height:28px;font-weight:600}
+p{margin:16px 0 0;color:var(--muted);text-wrap:pretty}
+a{color:var(--accent)}
+.btn{display:inline-flex;margin-top:32px;padding:8px 12px;border-radius:8px;background:#E8641F;color:var(--accent-ink);border-radius:9999px;font-weight:600;text-decoration:none;transition:transform 500ms var(--ease)}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(0.98)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:600px){h1{font-size:30px;line-height:36px}}
+@media (prefers-reduced-motion: reduce){.btn:hover{transform:none}}
+
+h1{font-size:36px;line-height:42px}
+.nw{white-space:nowrap}
+.kick{margin:0 0 12px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.by{color:var(--text)}.by b{font-weight:600}
+.venue{font-style:italic}
+.tags{display:flex;flex-wrap:wrap;gap:8px}.tags span{border:1px solid var(--line);border-radius:9999px;padding:2px 10px;font-size:13px}
+pre{margin:12px 0 0;padding:12px;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow-x:auto;font-size:13px;line-height:20px;white-space:pre-wrap}
+ul{padding-left:20px;color:var(--muted)}li{margin-top:8px}
+@media (max-width:600px){h1{font-size:26px;line-height:32px}}
+</style>
+<title>Development of a Smart Railway Platform System | Jatismar Saha</title>
+<meta name="description" content="An embedded system for smarter railway platforms. Book chapter by J. Saha, R. Choudhuri, D. Kalita, J. Swarnakar, Futuristic Trends in Network &amp; Communication Technologies, IIP Series 3 (2023), pp. 186-196.">
+<meta name="author" content="Jatismar Saha">
+<link rel="canonical" href="https://jatismarsaha.github.io/papers/smart-railway-platform-system.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Development of a Smart Railway Platform System">
+<meta property="og:description" content="An embedded system for smarter railway platforms. Book chapter by J. Saha, R. Choudhuri, D. Kalita, J. Swarnakar, Futuristic Trends in Network &amp; Communication Technologies, IIP Series 3 (2023), pp. 186-196.">
+<meta property="og:url" content="https://jatismarsaha.github.io/papers/smart-railway-platform-system.html">
+<meta property="og:image" content="https://jatismarsaha.github.io/banner.png?v=2">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Chapter",
+ "headline": "Development of a Smart Railway Platform System",
+ "name": "Development of a Smart Railway Platform System",
+ "datePublished": "2023-12-01",
+ "url": "https://jatismarsaha.github.io/papers/smart-railway-platform-system.html",
+ "sameAs": "https://doi.org/10.58532/V3BINC3P6CH5",
+ "identifier": {
+  "@type": "PropertyValue",
+  "propertyID": "DOI",
+  "value": "10.58532/V3BINC3P6CH5"
+ },
+ "author": [
+  {
+   "@type": "Person",
+   "name": "Jatismar Saha",
+   "url": "https://jatismarsaha.github.io/",
+   "sameAs": "https://orcid.org/0009-0009-4859-5051"
+  },
+  {
+   "@type": "Person",
+   "name": "Rohan Choudhuri"
+  },
+  {
+   "@type": "Person",
+   "name": "Dipankar Kalita"
+  },
+  {
+   "@type": "Person",
+   "name": "Jaydeep Swarnakar"
+  }
+ ],
+ "keywords": "Embedded systems, Railway safety, Sensors",
+ "isPartOf": {
+  "@type": "Book",
+  "name": "Futuristic Trends in Network & Communication Technologies, IIP Series"
+ }
+}
+</script>
+</head><body><main>
+<p class="kick">Book chapter &middot; 2023 &middot; First author</p>
+<h1>Development of a Smart Railway Platform System</h1>
+<p class="by"><b>J. Saha</b>, R. Choudhuri, D. Kalita, J. Swarnakar</p>
+<p class="venue">Futuristic Trends in Network &amp; Communication Technologies, IIP Series 3 (2023), pp. 186-196</p>
+<h2>In short</h2>
+<p>An embedded system for smarter railway platforms.</p>
+
+<p class="tags"><span>Embedded systems</span><span>Railway safety</span><span>Sensors</span></p>
+<a class="btn" href="https://doi.org/10.58532/V3BINC3P6CH5" rel="noopener">Read at the publisher</a>
+<p class="venue">doi: 10.58532/V3BINC3P6CH5</p>
+<h2>Cite</h2>
+<pre>@incollection{saha2023smart,
+  title = {Development of a Smart Railway Platform System},
+  author = {Jatismar Saha and Rohan Choudhuri and Dipankar Kalita and Jaydeep Swarnakar},
+  year = {2023},
+  doi = {10.58532/V3BINC3P6CH5},
+  booktitle = {Futuristic Trends in Network &amp; Communication Technologies, IIP Series},
+  volume = {3},
+  pages = {186--196}
+}</pre>
+<h2>More first-author work</h2>
+<ul><li><a href="soi-double-gate-tfet-radiation.html">Radiation Effects in Silicon-On-Insulator n-p-n Double-Gate TFET: A Simulation Study</a></li><li><a href="step-tfet-interface-traps-temperature.html">Investigating the Effects of Interface Trap Charges and Temperature on N-Type Step Tunneling Path TFET</a></li><li><a href="step-tfet-heavy-ion-radiation.html">Investigating the Effects of Heavy-ion Radiation on n-Type Step Tunnelling Path TFET</a></li></ul>
+<p><a href="../#publications">All publications</a> &middot; <a href="../">Jatismar Saha, PhD researcher, IIT Guwahati and NIMS Japan</a></p>
+</main></body></html>
